@@ -4,19 +4,24 @@ import matplotlib.pyplot as plt
 import simpy
 import random
 
+# PRINTS AT START
+left_column, right_column = st.beta_columns(2)
 
+st.write("Graphs are smoothed to make them clearer, due of this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor below:")
+smoothing_factor = st.selectbox("", [1, 10, 20, 30, 40, 50, 75, 100])
 
 # INPUT VARIABLES
-checking_manpower = st.sidebar.select_slider("Number of working checkers", options = [1, 2, 3, 4, 5, 6, 7, 8]) # number of employees working on checking and stickering
-putaway_manpower =  st.sidebar.select_slider("Number of working put away", options = [1, 2, 3, 4, 5, 6, 7, 8]) # number of employees working on putaway
+checking_manpower = st.select_slider("Number of working checkers", [1, 2, 3, 4, 5, 6, 7, 8]) # number of employees working on checking and stickering
+putaway_manpower =  st.select_slider("Number of working put away", [1, 2, 3, 4, 5, 6, 7, 8]) # number of employees working on putaway
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
+
 
 
 options_prob_full = []
 for i in range(101):
     i = i / 100
     options_prob_full.append(i)
-prob_full = st.sidebar.select_slider("Probability of a full pallet", options = options_prob_full)   # the probability of a full pallet inbound
+prob_full = st.sidebar.select_slider("Probability of a full pallet", options_prob_full)   # the probability of a full pallet inbound
 
 
 fullpallets_checked_options = []
@@ -46,15 +51,14 @@ pallets_putaway = st.sidebar.select_slider("Number of pallets an employee can pu
 options_duration = []
 for i in range(1,101):
     options_duration.append(i)
-duration = st.sidebar.select_slider("Duration of the simulation in days", options_duration) # number of days to run the simulation for
+duration = st.select_slider("Duration of the simulation in days", options_duration) # number of days to run the simulation for
 
 
 options_palletsperday = []
 for i in range(1,1001):
     options_palletsperday.append(i)
-pallets_per_day = st.sidebar.select_slider("Number of arriving pallets per day", options_palletsperday)
+pallets_per_day = st.select_slider("Number of arriving pallets per day", options_palletsperday)
 
-st.sidebar.write("Average number of incoming pallets per day is 400")
 
 
 
@@ -202,7 +206,7 @@ sim.simulate()
 # smooth list based on number of steps (averaged over the number of steps specified)
 def list_smoother(input_list):
     smoothed_list = []
-    step = 20
+    step = smoothing_factor + 1
     summer = 0
    
     for index, val in enumerate(input_list):
@@ -226,7 +230,7 @@ ax.set_title("Temporary stock")
 st.pyplot(fig)
 
 fig, ax = plt.subplots(2)
-fig.suptitle("Unloaded stock, not yet checked \n Checked stock, not yet put away")
+fig.suptitle("Unloaded stock, not yet checked \n Checked and labelled stock, not yet put away")
 plt.setp(plt.gcf().get_axes(), xticks=[])
 ax[0].plot(list_smoother(sim.unloaded_pallets_list), )
 ax[1].plot(list_smoother(sim.checked_pallets_list), )
@@ -235,9 +239,9 @@ st.pyplot(fig)
 
 
 st.write("Over", duration, "days", sim.arrived_pallets, "pallets arrived, so on average", 
-      sim.arrived_pallets / duration, "pallets arrived per day","\n")
+      round(sim.arrived_pallets / duration, 2), "pallets arrived per day","\n")
 
-st.write(" Checked pallets in total:", sim.checking_counter, "\n", 
+st.write("Checked and labelled pallets in total:", sim.checking_counter, "\n", 
       "Putawayed pallets in total:", sim.putaway_counter, "\n")
 
 
