@@ -60,6 +60,8 @@ pallets_per_day = st.number_input("Number of arriving pallets per day")
 
 st.write("\n")
 st.write("\n")
+st.write("\n")
+
 
 red_line = st.number_input("Y-axis position of red line")
 yellow_line = st.number_input("Y-axis position of yellow line")
