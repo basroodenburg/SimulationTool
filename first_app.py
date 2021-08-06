@@ -22,11 +22,11 @@ smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, sm
 # INPUT VARIABLES
 duration = st.sidebar.number_input("Duration of the simulation in days", step = 1, min_value = 1) # number of days to run the simulation for
 
-pallets_per_day = st.sidebar.number_input("Number of arriving pallets per day", step = 1)
+pallets_per_day = st.sidebar.number_input("Number of arriving pallets per day", step = 1, min_value = 1)
 
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
-checking_manpower = st.sidebar.number_input('Number of employees working for: checking (a checker both checks and labels)', step = 0.5)
-putaway_manpower = st.sidebar.number_input('Number of employees working for: put away', step = 0.5)
+checking_manpower = st.sidebar.number_input('Number of employees working for: checking (a checker both checks and labels)', step = 0.5, min_value = 0.5)
+putaway_manpower = st.sidebar.number_input('Number of employees working for: put away', step = 0.5, min_value = 0.5)
 
 
 options_prob_full = []
