@@ -55,7 +55,7 @@ pallets_labelled = st.sidebar.select_slider("Number of pallets an employee can l
 
 
 pallets_putaway_options = []
-for i in range(50, 401):
+for i in range(100, 401):
     pallets_putaway_options.append(i)
 pallets_putaway = st.sidebar.select_slider("Number of pallets an employee can put away per day", pallets_putaway_options)
 
