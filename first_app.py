@@ -9,10 +9,9 @@ st.write("Graphs can be smoothed to make them clearer, due to this, starting gra
 smoothing_factor = st.selectbox("", [1, 10, 20, 30, 40, 50, 75, 100])
 
 # INPUT VARIABLES
-#checking_manpower = st.select_slider("Number of employees working for: checking", [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]) # number of employees working on checking and stickering
-putaway_manpower =  st.select_slider("Number of employees working for: put away", [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]) # number of employees working on putaway
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
-checking_manpower = st.number_input('Enter a number')
+checking_manpower = st.number_input('Number of employees working for: checking')
+putaway_manpower = st.number_input('Number of employees working for: put away')
 
 
 options_prob_full = []
