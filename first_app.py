@@ -14,8 +14,7 @@ st.write("\n")
 
 smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor below:", [1, 10, 20, 30, 40, 50])
 
-red_line = st.number_input("Y-axis position of red line")
-yellow_line = st.number_input("Y-axis position of yellow line")
+
 
 
 # INPUT VARIABLES
@@ -59,6 +58,11 @@ duration = st.number_input("Duration of the simulation in days") # number of day
 
 pallets_per_day = st.number_input("Number of arriving pallets per day")
 
+st.write("\n")
+st.write("\n")
+
+red_line = st.number_input("Y-axis position of red line")
+yellow_line = st.number_input("Y-axis position of yellow line")
 
 
 
