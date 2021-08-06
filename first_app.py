@@ -62,7 +62,6 @@ pallets_putaway = st.sidebar.select_slider("Number of pallets an employee can pu
 
 st.write("\n")
 st.write("\n")
-st.write("\n")
 
 
 red_line = st.number_input("Y-axis position of red line", step = 1)
