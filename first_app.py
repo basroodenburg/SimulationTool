@@ -12,6 +12,8 @@ st.write("Follow this link to see the complete flow of the simulation: https://d
 st.write("\n")
 st.write("\n")
 
+st.sidebar.title("Parameter setting")
+
 smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, smoothing takes the average of each x number of times the stock was updated. This x number of steps can be chosen below:", [1, 10, 20, 30, 40, 50])
 
 
