@@ -19,8 +19,8 @@ smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, sm
 
 # INPUT VARIABLES
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
-checking_manpower = st.number_input('Number of employees working for: checking')
-putaway_manpower = st.number_input('Number of employees working for: put away')
+checking_manpower = st.number_input('Number of employees working for: checking', step = 1)
+putaway_manpower = st.number_input('Number of employees working for: put away', step = 1)
 
 
 options_prob_full = []
