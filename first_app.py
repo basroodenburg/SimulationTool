@@ -66,7 +66,7 @@ st.write("\n")
 st.write("\n")
 
 
-red_line = st.number_input("Y-axis position of red line", step = 1, min_value = 1)
+red_line = st.number_input("Y-axis position of red line", step = 1, min_value = 2)
 yellow_line = st.number_input("Y-axis position of yellow line", step = 1, min_value = 1)
 
 
