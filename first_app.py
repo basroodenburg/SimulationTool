@@ -14,9 +14,9 @@ st.write("\n")
 
 smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor using the slider below:", [1, 10, 20, 30, 40, 50])
 
-red_line = 50
-yellow_line = 60
-# st.selectbox("Y-axis position of red line")
+red_line = st.selectbox("Y-axis position of red line")
+yellow_line = st.selectbox("Y-axis position of yellow line")
+# 
 
 # INPUT VARIABLES
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
