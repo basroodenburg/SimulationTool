@@ -56,8 +56,8 @@ duration = st.number_input("Duration of the simulation in days") # number of day
 pallets_per_day = st.number_input("Number of arriving pallets per day")
 
 
-
-
+red_line = st.sidebar.selectbox("Y-axis position of red line")
+yellow_line = st.sidebar.selectbox("Y-axis position of yellow line")
 
 
 class InboundSimulator:
@@ -219,8 +219,8 @@ def list_smoother(input_list):
 
 fig, ax = plt.subplots()
 ax.plot(list_smoother(sim.arrived_pallets_temp_list), )
-plt.axhline(y = 79, c='y')
-plt.axhline(y = 123, c='r')
+plt.axhline(y = yellow_line, c='y')
+plt.axhline(y = red_line, c='r')
 plt.tick_params(left = True, right = False, labelleft = True, labelbottom = False, bottom = False)
 ax.set_title("Temporary stock")
 st.pyplot(fig)
