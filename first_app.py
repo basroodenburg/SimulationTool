@@ -241,5 +241,4 @@ st.write("Checked and labelled pallets in total:", sim.checking_counter, "\n",
 
 
 
-st.image(".\Simulatie flow diagram.png")
 
