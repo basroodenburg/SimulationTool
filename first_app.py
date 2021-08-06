@@ -12,7 +12,7 @@ st.write("Follow this link to see the flow of the simulation: https://drive.goog
 st.write("\n")
 st.write("\n")
 
-smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor below:", [1, 10, 20, 30, 40, 50])
+smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, this takes the average of the number of steps which can be specified below:" [1, 10, 20, 30, 40, 50])
 
 
 
