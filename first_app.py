@@ -54,9 +54,9 @@ for i in range(50, 401):
 pallets_putaway = st.sidebar.select_slider("Number of pallets an employee can put away per day", pallets_putaway_options)
 
 
-duration = st.number_input("Duration of the simulation in days") # number of days to run the simulation for
+duration = st.number_input("Duration of the simulation in days", step = 1) # number of days to run the simulation for
 
-pallets_per_day = st.number_input("Number of arriving pallets per day")
+pallets_per_day = st.number_input("Number of arriving pallets per day", step = 1)
 
 st.write("\n")
 st.write("\n")
