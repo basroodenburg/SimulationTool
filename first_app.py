@@ -56,8 +56,8 @@ duration = st.number_input("Duration of the simulation in days") # number of day
 pallets_per_day = st.number_input("Number of arriving pallets per day")
 
 
-red_line = st.sidebar.selectbox("Y-axis position of red line")
-yellow_line = st.sidebar.selectbox("Y-axis position of yellow line")
+red_line = st.selectbox("Y-axis position of red line")
+yellow_line = st.selectbox("Y-axis position of yellow line")
 
 
 class InboundSimulator:
