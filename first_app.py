@@ -90,6 +90,9 @@ class InboundSimulator:
 
         self.checking_counter = 0 # document the number of pallets checked over time in total
         self.putaway_counter = 0 # document the number of pallets put away over time in total
+        
+        self.begin_check = []
+        self.end_check = []
            
         
     
@@ -126,6 +129,7 @@ class InboundSimulator:
         checker_request = checker.request()
         yield checker_request
         start_checking = env.now
+        self.begin_check.append(start_checking)
 
         
         checked_per_day_per_employee = fullpallets_checked # on average, one employee can check 200 full pallets per day
@@ -137,6 +141,7 @@ class InboundSimulator:
         checking_duration = random.expovariate(checked_per_day_per_employee)
         yield env.timeout(checking_duration)
         end_checking = env.now 
+        self.end_check.append(end_checking)
         checker.release(checker_request)
         
     # WAITING
@@ -209,6 +214,21 @@ class InboundSimulator:
 sim = InboundSimulator()
 sim.simulate()   
 
+def productivity_calculator(begin_list, end_list):
+    returned_list = []
+    
+    len_begin = len(begin_list)
+    len_end = len(end_list)
+    
+    for begin, end in zip(begin_list, end_list):
+        service_time = end - begin
+        returned_list.append(service_time)
+    
+    return returned_list
+
+service_time = sum(productivity_calculator(sim.begin_check, sim.end_check)) / checking_manpower / duration
+
+st.write(service_time)
 
 
 # smooth list based on number of steps (averaged over the number of steps specified)
