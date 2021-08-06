@@ -12,11 +12,11 @@ st.write("Follow this link to see the flow of the simulation: https://drive.goog
 st.write("\n")
 st.write("\n")
 
-smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor using the slider below:", [1, 10, 20, 30, 40, 50])
+smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor below:", [1, 10, 20, 30, 40, 50])
 
-red_line = st.selectbox("Y-axis position of red line")
-yellow_line = st.selectbox("Y-axis position of yellow line")
-# 
+red_line = st.number_input("Y-axis position of red line")
+yellow_line = st.number_input("Y-axis position of yellow line")
+
 
 # INPUT VARIABLES
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
