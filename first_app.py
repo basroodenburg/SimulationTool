@@ -6,7 +6,7 @@ import random
 
 # PRINTS AT START
 st.write("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor using the slider below:")
-smoothing_factor = st.selectbox("", [1, 10, 20, 30, 40, 50, 75, 100])
+smoothing_factor = st.selectbox("", [1, 10, 20, 30, 40, 50])
 
 # INPUT VARIABLES
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
@@ -45,16 +45,9 @@ for i in range(50, 401):
 pallets_putaway = st.sidebar.select_slider("Number of pallets an employee can put away per day", pallets_putaway_options)
 
 
-options_duration = []
-for i in range(1,101):
-    options_duration.append(i)
-duration = st.select_slider("Duration of the simulation in days", options_duration) # number of days to run the simulation for
+duration = st.number_input("Duration of the simulation in days") # number of days to run the simulation for
 
-
-options_palletsperday = []
-for i in range(1,1001):
-    options_palletsperday.append(i)
-pallets_per_day = st.select_slider("Number of arriving pallets per day", options_palletsperday)
+pallets_per_day = st.number_input("Number of arriving pallets per day")
 
 
 
