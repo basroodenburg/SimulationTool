@@ -8,8 +8,7 @@ import random
 st.title('Simulation tool for incoming deliveries')
 
 st.write("Note, between arrival of a pallet and starting checks, every 20 pallets 30 minutes of waiting time occurs - on average. This also takes place between checking and labelling")
-st.write("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor using the slider below:")
-smoothing_factor = st.selectbox("", [1, 10, 20, 30, 40, 50])
+smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor using the slider below:", [1, 10, 20, 30, 40, 50])
 
 # INPUT VARIABLES
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
