@@ -5,14 +5,12 @@ import simpy
 import random
 
 # PRINTS AT START
-left_column, right_column = st.beta_columns(2)
-
-st.write("Graphs are smoothed to make them clearer, due of this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor below:")
+st.write("Graphs can be smoothed to make them clearer, due to this, starting graphs seem to be incorrect. Upon creating a setup it will work correctly. Alter the smoothing factor using the slider below:")
 smoothing_factor = st.selectbox("", [1, 10, 20, 30, 40, 50, 75, 100])
 
 # INPUT VARIABLES
-checking_manpower = st.select_slider("Number of working checkers", [1, 2, 3, 4, 5, 6, 7, 8]) # number of employees working on checking and stickering
-putaway_manpower =  st.select_slider("Number of working put away", [1, 2, 3, 4, 5, 6, 7, 8]) # number of employees working on putaway
+checking_manpower = st.select_slider("Number of employees working for: checking", [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]) # number of employees working on checking and stickering
+putaway_manpower =  st.select_slider("Number of employees working for: checking", [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]) # number of employees working on putaway
 waiting_manpower = 9999999 # pseudo process which must always happen when called upon, so, unlimited capacity
 
 
