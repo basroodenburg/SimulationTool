@@ -8,6 +8,7 @@ import random
 st.title('Simulation tool for incoming deliveries')
 
 st.write("Note, between arrival of a pallet and starting checks, every 20 pallets 30 minutes of waiting time occurs - on average. This also takes place between checking and labelling")
+st.write("Follow this link to see the flow of the simulation: https://drive.google.com/file/d/1PmX5OmuI-p9TxxwV-FKxSQi1MJEJEpMy/view?usp=sharing")
 st.write("\n")
 st.write("\n")
 
