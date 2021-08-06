@@ -12,7 +12,7 @@ st.write("Follow this link to see the complete flow of the simulation: https://d
 st.write("\n")
 st.write("\n")
 
-smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, this takes the average of the number of steps which can be specified below:", [1, 10, 20, 30, 40, 50])
+smoothing_factor = st.selectbox("Graphs can be smoothed to make them clearer, smoothing takes the average of each x number of times the stock was updated. This x number of steps can be chosen below:", [1, 10, 20, 30, 40, 50])
 
 
 
